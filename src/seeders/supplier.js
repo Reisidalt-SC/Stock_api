@@ -7,7 +7,7 @@ export async function seedSuppliers() {
     const Suppliers = [];
 
     
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 60; i++) {
       Suppliers.push({
         company_name: faker.company.name(),
         cnpj: faker.string.numeric(14),

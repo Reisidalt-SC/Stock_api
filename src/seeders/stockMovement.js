@@ -14,7 +14,7 @@ export async function seedMovements() {
     const movements = [];
 
     
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 5000; i++) {
       
       const randomProduct = products[Math.floor(Math.random() * products.length)];
       const randomUser = users[Math.floor(Math.random() * users.length)];
@@ -25,7 +25,7 @@ export async function seedMovements() {
         type: faker.helpers.arrayElement(['ENTRY', 'EXIT', 'ADJUSTMENT']), 
         quantity: faker.number.int({ min: 1, max: 100 }),
         reason: faker.commerce.productDescription(),  
-        createdAt: new Date(),
+        createdAt: faker.date.past({ years: 0.5 }),
         updatedAt: new Date()
       });
     }

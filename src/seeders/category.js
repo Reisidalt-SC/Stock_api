@@ -7,7 +7,7 @@ export async function seedCategories() {
     const Categories = [];
 
     
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 30; i++) {
       Categories.push({
         name: faker.commerce.department(), 
         description: faker.commerce.productDescription(),

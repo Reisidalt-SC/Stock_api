@@ -14,7 +14,7 @@ export async function seedProducts() {
     const products = [];
 
     
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 50; i++) {
       
       const randomCategory = categories[Math.floor(Math.random() * categories.length)];
       const randomSupplier = suppliers[Math.floor(Math.random() * suppliers.length)];
