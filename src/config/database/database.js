@@ -32,7 +32,7 @@ const dataBaseConnect = async () => {
     try {
       await db.authenticate();
       console.log("success to connect database!");
-      await db.sync({ force: true });
+      await db.sync({ force: false });
       console.log("models synchronized");
     } catch (error) {
       console.error("Error to synchronize models", error);
