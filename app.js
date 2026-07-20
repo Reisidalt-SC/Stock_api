@@ -7,6 +7,7 @@ import productRT from "./src/routes/productRT.js";
 import stockMovementRT from "./src/routes/stockMovementRT.js";
 import supplierRT from "./src/routes/supplierRT.js";
 import userRT from "./src/routes/userRT.js";
+import {seedsCreate} from "./src/seeders/index.js"
 import "dotenv/config"; 
 
 const app = express();
@@ -21,16 +22,16 @@ app.use("/stock-movements", stockMovementRT);
 app.use("/users", userRT)
 
 
-const boot = () => {
-    app.listen(port, () => {
-        try {
-            console.log(`Server is running on http://localhost:${port}`);
-            dataBaseConnect();
-        } catch (error) {
-            console.error('Error starting the server:', error);
-        }
-        ;
-    })
+const boot = async () => {
+    try {
+        await dataBaseConnect();
+        await seedsCreate();
+        app.listen(port, () => {
+            console.log(`🚀 Server is running on http://localhost:${port}`);
+        });
+    } catch (error) {
+        console.error('❌ Error starting the server:', error);
+    }
 };
 
 boot(port);

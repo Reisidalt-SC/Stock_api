@@ -4,6 +4,7 @@ import { DataTypes } from "sequelize";
 const Product = db.define(`Product`,{
     id: {
         type: db.Sequelize.INTEGER,
+        autoIncrement: true,
         primaryKey: true, 
     },
     name: {
